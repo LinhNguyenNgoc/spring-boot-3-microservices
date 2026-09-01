@@ -1,0 +1,10 @@
+### Create a new product
+POST http://localhost:8080/api/product
+Content-Type: application/json
+
+{
+  "name": "iPhone 15",
+  "description": "iPhone 15 is a smartphone from Apple",
+  "price": 1000
+}
+
