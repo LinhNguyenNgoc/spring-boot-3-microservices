@@ -16,7 +16,22 @@
 
 	<properties>
 		<java.version>21</java.version>
+		<!-- ĐÃ SỬA: Dùng bản 2023.0.1 để tương thích với Spring Boot 3.2.5 -->
+		<spring-cloud.version>2023.0.1</spring-cloud.version>
 	</properties>
+
+	<!-- ĐÃ SỬA: Di chuyển dependencyManagement lên TRƯỚC dependencies -->
+	<dependencyManagement>
+	    <dependencies>
+	      <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-dependencies</artifactId>
+	        <version>${spring-cloud.version}</version>
+	        <type>pom</type>
+	        <scope>import</scope>
+	      </dependency>
+	    </dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<!-- Spring Boot Starters -->
@@ -26,13 +41,13 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId> <!-- Sửa từ spring-boot-starter-webmvc -->
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<!-- Flyway & Database -->
 		<dependency>
 			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId> <!-- Sửa từ spring-boot-starter-flyway -->
+			<artifactId>flyway-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.flywaydb</groupId>
@@ -54,7 +69,7 @@
 		<!-- Testing Dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId> <!-- Thay thế cho 3 starter test sai tên -->
+			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -64,13 +79,19 @@
 		</dependency>
 		<dependency>
 			<groupId>org.testcontainers</groupId>
-			<artifactId>junit-jupiter</artifactId> <!-- Sửa từ testcontainers-junit-jupiter -->
+			<artifactId>junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.testcontainers</groupId>
-			<artifactId>mysql</artifactId> <!-- Sửa từ testcontainers-mysql -->
+			<artifactId>mysql</artifactId>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- OpenFeign -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 	</dependencies>
 
