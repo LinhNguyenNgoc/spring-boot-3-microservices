@@ -39,3 +39,7 @@ Thumbs.db
 **/data/
 **/docker/tempo/tempo-data/
 *.sock
+
+# Bỏ qua thư mục dữ liệu mysql
+mysql/
+order-service/mysql/
