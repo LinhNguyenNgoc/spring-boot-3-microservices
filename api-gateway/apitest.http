@@ -1,0 +1,15 @@
+### Get Product
+GET http://localhost:9000/api/product
+
+### Create Order
+POST http://localhost:9000/api/order
+Content-Type: application/json
+
+{
+  "skuCode": "iphone_15",
+  "price": 1000,
+  "quantity": 10
+}
+
+### Get Inventory
+GET http://localhost:9000/api/inventory?skuCode=iphone_15&quantity=10
