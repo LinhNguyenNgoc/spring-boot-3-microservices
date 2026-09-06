@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.example.order.event;
+package com.example.notification.order;
 
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
@@ -13,26 +13,26 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -6775416986806290587L;
+public class OrderPlacedEvent1 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = -8854900992908963101L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrderPlacedEvent\",\"namespace\":\"com.example.order.event\",\"fields\":[{\"name\":\"orderNumber\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"OrderPlacedEvent\",\"namespace\":\"com.example.notification.order\",\"fields\":[{\"name\":\"orderNumber\",\"type\":\"string\"},{\"name\":\"email\",\"type\":\"string\"},{\"name\":\"firstName\",\"type\":\"string\"},{\"name\":\"lastName\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<OrderPlacedEvent> ENCODER =
+  private static final BinaryMessageEncoder<OrderPlacedEvent1> ENCODER =
       new BinaryMessageEncoder<>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<OrderPlacedEvent> DECODER =
+  private static final BinaryMessageDecoder<OrderPlacedEvent1> DECODER =
       new BinaryMessageDecoder<>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<OrderPlacedEvent> getEncoder() {
+  public static BinaryMessageEncoder<OrderPlacedEvent1> getEncoder() {
     return ENCODER;
   }
 
@@ -40,7 +40,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<OrderPlacedEvent> getDecoder() {
+  public static BinaryMessageDecoder<OrderPlacedEvent1> getDecoder() {
     return DECODER;
   }
 
@@ -49,7 +49,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<OrderPlacedEvent> createDecoder(SchemaStore resolver) {
+  public static BinaryMessageDecoder<OrderPlacedEvent1> createDecoder(SchemaStore resolver) {
     return new BinaryMessageDecoder<>(MODEL$, SCHEMA$, resolver);
   }
 
@@ -68,7 +68,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
    * @return a OrderPlacedEvent instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static OrderPlacedEvent fromByteBuffer(
+  public static OrderPlacedEvent1 fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -83,7 +83,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public OrderPlacedEvent() {}
+  public OrderPlacedEvent1() {}
 
   /**
    * All-args constructor.
@@ -92,7 +92,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
    * @param firstName The new value for firstName
    * @param lastName The new value for lastName
    */
-  public OrderPlacedEvent(java.lang.CharSequence orderNumber, java.lang.CharSequence email, java.lang.CharSequence firstName, java.lang.CharSequence lastName) {
+  public OrderPlacedEvent1(java.lang.CharSequence orderNumber, java.lang.CharSequence email, java.lang.CharSequence firstName, java.lang.CharSequence lastName) {
     this.orderNumber = orderNumber;
     this.email = email;
     this.firstName = firstName;
@@ -202,8 +202,8 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
    * Creates a new OrderPlacedEvent RecordBuilder.
    * @return A new OrderPlacedEvent RecordBuilder
    */
-  public static com.example.order.event.OrderPlacedEvent.Builder newBuilder() {
-    return new com.example.order.event.OrderPlacedEvent.Builder();
+  public static com.example.notification.order.OrderPlacedEvent1.Builder newBuilder() {
+    return new com.example.notification.order.OrderPlacedEvent1.Builder();
   }
 
   /**
@@ -211,11 +211,11 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
    * @param other The existing builder to copy.
    * @return A new OrderPlacedEvent RecordBuilder
    */
-  public static com.example.order.event.OrderPlacedEvent.Builder newBuilder(com.example.order.event.OrderPlacedEvent.Builder other) {
+  public static com.example.notification.order.OrderPlacedEvent1.Builder newBuilder(com.example.notification.order.OrderPlacedEvent1.Builder other) {
     if (other == null) {
-      return new com.example.order.event.OrderPlacedEvent.Builder();
+      return new com.example.notification.order.OrderPlacedEvent1.Builder();
     } else {
-      return new com.example.order.event.OrderPlacedEvent.Builder(other);
+      return new com.example.notification.order.OrderPlacedEvent1.Builder(other);
     }
   }
 
@@ -224,11 +224,11 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
    * @param other The existing instance to copy.
    * @return A new OrderPlacedEvent RecordBuilder
    */
-  public static com.example.order.event.OrderPlacedEvent.Builder newBuilder(com.example.order.event.OrderPlacedEvent other) {
+  public static com.example.notification.order.OrderPlacedEvent1.Builder newBuilder(com.example.notification.order.OrderPlacedEvent1 other) {
     if (other == null) {
-      return new com.example.order.event.OrderPlacedEvent.Builder();
+      return new com.example.notification.order.OrderPlacedEvent1.Builder();
     } else {
-      return new com.example.order.event.OrderPlacedEvent.Builder(other);
+      return new com.example.notification.order.OrderPlacedEvent1.Builder(other);
     }
   }
 
@@ -236,8 +236,8 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
    * RecordBuilder for OrderPlacedEvent instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<OrderPlacedEvent>
-    implements org.apache.avro.data.RecordBuilder<OrderPlacedEvent> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<OrderPlacedEvent1>
+    implements org.apache.avro.data.RecordBuilder<OrderPlacedEvent1> {
 
     private java.lang.CharSequence orderNumber;
     private java.lang.CharSequence email;
@@ -253,7 +253,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.example.order.event.OrderPlacedEvent.Builder other) {
+    private Builder(com.example.notification.order.OrderPlacedEvent1.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.orderNumber)) {
         this.orderNumber = data().deepCopy(fields()[0].schema(), other.orderNumber);
@@ -277,7 +277,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
      * Creates a Builder by copying an existing OrderPlacedEvent instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.example.order.event.OrderPlacedEvent other) {
+    private Builder(com.example.notification.order.OrderPlacedEvent1 other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.orderNumber)) {
         this.orderNumber = data().deepCopy(fields()[0].schema(), other.orderNumber);
@@ -311,7 +311,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'orderNumber'.
       * @return This builder.
       */
-    public com.example.order.event.OrderPlacedEvent.Builder setOrderNumber(java.lang.CharSequence value) {
+    public com.example.notification.order.OrderPlacedEvent1.Builder setOrderNumber(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.orderNumber = value;
       fieldSetFlags()[0] = true;
@@ -331,7 +331,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
       * Clears the value of the 'orderNumber' field.
       * @return This builder.
       */
-    public com.example.order.event.OrderPlacedEvent.Builder clearOrderNumber() {
+    public com.example.notification.order.OrderPlacedEvent1.Builder clearOrderNumber() {
       orderNumber = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -351,7 +351,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'email'.
       * @return This builder.
       */
-    public com.example.order.event.OrderPlacedEvent.Builder setEmail(java.lang.CharSequence value) {
+    public com.example.notification.order.OrderPlacedEvent1.Builder setEmail(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.email = value;
       fieldSetFlags()[1] = true;
@@ -371,7 +371,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
       * Clears the value of the 'email' field.
       * @return This builder.
       */
-    public com.example.order.event.OrderPlacedEvent.Builder clearEmail() {
+    public com.example.notification.order.OrderPlacedEvent1.Builder clearEmail() {
       email = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -391,7 +391,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'firstName'.
       * @return This builder.
       */
-    public com.example.order.event.OrderPlacedEvent.Builder setFirstName(java.lang.CharSequence value) {
+    public com.example.notification.order.OrderPlacedEvent1.Builder setFirstName(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.firstName = value;
       fieldSetFlags()[2] = true;
@@ -411,7 +411,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
       * Clears the value of the 'firstName' field.
       * @return This builder.
       */
-    public com.example.order.event.OrderPlacedEvent.Builder clearFirstName() {
+    public com.example.notification.order.OrderPlacedEvent1.Builder clearFirstName() {
       firstName = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -431,7 +431,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
       * @param value The value of 'lastName'.
       * @return This builder.
       */
-    public com.example.order.event.OrderPlacedEvent.Builder setLastName(java.lang.CharSequence value) {
+    public com.example.notification.order.OrderPlacedEvent1.Builder setLastName(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.lastName = value;
       fieldSetFlags()[3] = true;
@@ -451,7 +451,7 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
       * Clears the value of the 'lastName' field.
       * @return This builder.
       */
-    public com.example.order.event.OrderPlacedEvent.Builder clearLastName() {
+    public com.example.notification.order.OrderPlacedEvent1.Builder clearLastName() {
       lastName = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -459,9 +459,9 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
 
     @Override
     @SuppressWarnings("unchecked")
-    public OrderPlacedEvent build() {
+    public OrderPlacedEvent1 build() {
       try {
-        OrderPlacedEvent record = new OrderPlacedEvent();
+        OrderPlacedEvent1 record = new OrderPlacedEvent1();
         record.orderNumber = fieldSetFlags()[0] ? this.orderNumber : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.email = fieldSetFlags()[1] ? this.email : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.firstName = fieldSetFlags()[2] ? this.firstName : (java.lang.CharSequence) defaultValue(fields()[2]);
@@ -476,8 +476,8 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<OrderPlacedEvent>
-    WRITER$ = (org.apache.avro.io.DatumWriter<OrderPlacedEvent>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<OrderPlacedEvent1>
+    WRITER$ = (org.apache.avro.io.DatumWriter<OrderPlacedEvent1>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -485,8 +485,8 @@ public class OrderPlacedEvent extends org.apache.avro.specific.SpecificRecordBas
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<OrderPlacedEvent>
-    READER$ = (org.apache.avro.io.DatumReader<OrderPlacedEvent>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<OrderPlacedEvent1>
+    READER$ = (org.apache.avro.io.DatumReader<OrderPlacedEvent1>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {

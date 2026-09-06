@@ -9,7 +9,8 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 
-import com.example.notification.order.OrderPlacedEvent;
+import com.example.order.event.OrderPlacedEvent;
+
 
 @Service
 @RequiredArgsConstructor
