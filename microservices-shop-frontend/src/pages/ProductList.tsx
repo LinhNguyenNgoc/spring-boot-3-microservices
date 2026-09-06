@@ -20,12 +20,24 @@ export const ProductList: React.FC = () => {
 
   const handleOrder = async (product: Product) => {
     const quantity = quantities[product.id] || 1;
-    await api.post('/api/order', {
-      skuCode: product.skuCode,
-      price: product.price,
-      quantity,
-    });
-    alert('Order placed successfully!');
+    
+    try {
+      await api.post('/api/order', {
+        skuCode: product.skuCode,
+        price: product.price,
+        quantity,
+        // Bổ sung userDetails để tránh lỗi NullPointerException ở backend
+        userDetails: {
+          email: "user@example.com", // Sửa thành email động/thật nếu có auth
+          firstName: "John",
+          lastName: "Doe"
+        }
+      });
+      alert('Order placed successfully!');
+    } catch (error: any) {
+      console.error('Order failed:', error);
+      alert(error.response?.data?.message || 'Failed to place order!');
+    }
   };
 
   return (
@@ -50,8 +62,9 @@ export const ProductList: React.FC = () => {
                 <input
                   type="number"
                   min="1"
+                  value={quantities[product.id] || 1}
                   className="w-16 p-1 border rounded bg-white text-sm"
-                  onChange={(e) => setQuantities({ ...quantities, [product.id]: parseInt(e.target.value) })}
+                  onChange={(e) => setQuantities({ ...quantities, [product.id]: parseInt(e.target.value) || 1 })}
                 />
               </div>
             </div>
